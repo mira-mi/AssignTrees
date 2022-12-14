@@ -77,15 +77,15 @@ namespace AssignTrees
                     if (current == null)
                     {
                         isNumberPresent = false;
-                        return FormulateConclusion(isNumberPresent, value);
+                        return MakeConclusion(isNumberPresent, value);
                     }
                 }
                 isNumberPresent = current != null && current.GetNumber() != null;
-                return FormulateConclusion(isNumberPresent, value);
+                return MakeConclusion(isNumberPresent, value);
             }
 
             // This method formulates the final sentence
-            public string FormulateConclusion(bool value, string number)
+            public string MakeConclusion(bool value, string number)
             {
                 string trueOrFalse;
                 if (value)
@@ -94,7 +94,7 @@ namespace AssignTrees
                 }
                 else
                 {
-                    trueOrFalse = "not ";
+                    trueOrFalse = "not";
                 }
                 string conclusion = "The number " + number + " is " + trueOrFalse + "found in the tree.";
                 return conclusion;
@@ -103,12 +103,12 @@ namespace AssignTrees
 
     }
 
-        class DictionaryNode
-        {
+    class DictionaryNode
+    {
         string number;
         Dictionary<char, DictionaryNode> node;
 
-        // This method adds the character to the dictionary
+        // adds character to dictionary
         public DictionaryNode Add(char value)
         {
             if (this.node == null)
@@ -151,7 +151,6 @@ namespace AssignTrees
         {
             return this.number;
         }
-    }
 
 
     }
