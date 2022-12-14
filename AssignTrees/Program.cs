@@ -34,13 +34,13 @@ namespace AssignTrees
             while (notSorted)
             {
                 notSorted = false;
-                for (int i = 0; i < array.Length - 1; i++)
+                for (int h = 0; h < array.Length - 1; h++)
                 {
-                    if (array[i] > array[i + 1])
+                    if (array[h] > array[h + 1])
                     {
-                        var temp = array[i];
-                        array[i] = array[i + 1];
-                        array[i + 1] = temp;
+                        var temp = array[h];
+                        array[h] = array[h + 1];
+                        array[h + 1] = temp;
 
                         notSorted = true;
                     }
@@ -58,9 +58,9 @@ namespace AssignTrees
             public void AddNumber(string value)
             {
                 DictionaryNode current = this.root;
-                for (int i = 0; i < value.Length; i++)
+                for (int p = 0; p < value.Length; p++)
                 {
-                    current = current.Add(value[i]);
+                    current = current.Add(value[p]);
                 }
                 // We can set the current number
                 current.SetNumber(value);
@@ -68,20 +68,20 @@ namespace AssignTrees
 
             public string ContainsNumber(string value)
             {
-                bool isNumberPresent;
+                bool isNumberThere;
                 // This method allows us to enter a string and then see if the characters are contained in the tree in order
                 DictionaryNode current = this.root;
-                for (int i = 0; i < value.Length; i++)
+                for (int r = 0; r < value.Length; r++)
                 {
-                    current = current.Get(value[i]);
+                    current = current.Get(value[r]);
                     if (current == null)
                     {
-                        isNumberPresent = false;
-                        return MakeConclusion(isNumberPresent, value);
+                        isNumberThere = false;
+                        return MakeConclusion(isNumberThere, value);
                     }
                 }
-                isNumberPresent = current != null && current.GetNumber() != null;
-                return MakeConclusion(isNumberPresent, value);
+                isNumberThere = current != null && current.GetNumber() != null;
+                return MakeConclusion(isNumberThere, value);
             }
 
             // This method formulates the final sentence
