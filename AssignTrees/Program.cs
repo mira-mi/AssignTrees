@@ -24,6 +24,7 @@ namespace AssignTrees
 
             WriteLine(tree.ContainsNumber("64"));
             WriteLine(tree.ContainsNumber("48"));
+            //simple examples
 
         }
 
@@ -31,6 +32,7 @@ namespace AssignTrees
         static int[] BubbleSort(int[] array, int v, int v1)
         {
             bool notSorted = true;
+            // I like this sort though it takes a while
             while (notSorted)
             {
                 notSorted = false;
@@ -62,14 +64,15 @@ namespace AssignTrees
                 {
                     current = current.Add(value[p]);
                 }
-                // We can set the current number
+                
                 current.SetNumber(value);
             }
 
             public string ContainsNumber(string value)
             {
                 bool isNumberThere;
-                // This method allows us to enter a string and then see if the characters are contained in the tree in order
+                //basically does the number exist in this case
+         
                 DictionaryNode current = this.root;
                 for (int r = 0; r < value.Length; r++)
                 {
@@ -84,7 +87,7 @@ namespace AssignTrees
                 return MakeConclusion(isNumberThere, value);
             }
 
-            // This method formulates the final sentence
+            //creates the final sentence so that we can see if it found it
             public string MakeConclusion(bool value, string number)
             {
                 string trueOrFalse;
@@ -103,6 +106,7 @@ namespace AssignTrees
 
     }
 
+    //making a whole dictionary with nodes
     class DictionaryNode
     {
         string number;
@@ -129,7 +133,7 @@ namespace AssignTrees
 
         public DictionaryNode Get(char value)
         {
-            // This way we can get the individual child node
+            
             if (this.node == null)
             {
                 return null;
